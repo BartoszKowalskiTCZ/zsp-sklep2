@@ -1,24 +1,24 @@
 <html> 
-     <head> 
-         <title>zsp-sklep</title> 
-         <meta charset="utf-8"> 
-         <link rel="stylesheet" href="styl.css"> 
-         <?php 
-             $db = new mysqli("127.0.0.1","root","","zsp-sklep"); 
-         ?> 
-     </head> 
-     <body> 
-         <div class="sr"> 
-             <h2>Stwórz nowe ogłoszenie</h2>      
-             <?php 
-                 echo "<b>Zalogowany jako: </b>".$_COOKIE["uzytkownik"].'<br>'; 
-             ?>  
-         </div> 
-         <div class="main"> 
-             <form method="post"> 
-                 <p><label>Nazwa: <input type="text" name="nazwa"></label></p> 
-                 <p><label>Opis: <input type="text" name="opis"></label></p> 
-                 <p><label>Cena: <input type="text" name="cena"></label></p>  
+<head> 
+<title>zsp-sklep</title> 
+<meta charset="utf-8"> 
+<link rel="stylesheet" href="styl.css"> 
+<?php 
+$con = new mysqli("127.0.0.1","root","","zsp-sklep"); 
+?> 
+</head> 
+<body> 
+<div class="sr"> 
+<h2>Stwórz nowa oferte</h2>      
+<?php 
+echo "<b>Zalogowany jako: </b>".$_COOKIE["uzytkownik"].'<br>'; 
+?>  
+</div> 
+<div class="main"> 
+<form method="post"> 
+                 <p><label>Name: <input type="text" name="name"></label></p> 
+                 <p><label>Description: <input type="text" name="Description"></label></p> 
+                 <p><label>Price: <input type="text" name="Price"></label></p>  
                  <p> 
                      <button type="submit"><b>Stwórz</b></button>  
                      |  
@@ -35,7 +35,7 @@
              ?> 
          </div> 
          <div class="sr"> 
-             <h4>ZSP-Shop</h4> 
+             <h4>zsp-sklep</h4> 
          </div> 
      </body> 
  </html> 
