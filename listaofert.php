@@ -13,6 +13,20 @@ $offers= $res->fetch_all(MYSQLI_ASSOC);
 ?>
 </head>
 <body>
-<?php
-echo "Twoje oferty";
-for($i = 0; $i
+<?php 
+echo "twoje oferty<br>"; 
+for($i = 0; $i < count($y2); $i++){ 
+echo 'Numer ogłoszenia to '.$y2[$i]['id'].'<br>'; 
+echo 'Nazwa produktu '.$y2[$i]['product_name'].'<br>'; 
+echo 'Cena produktu '.$y2[$i]['price'].'<br>'; 
+echo 'Opisz<br>'.$y2[$i]['content'].'<br>'; 
+} 
+?> 
+<form action="add_offer.php"> 
+<button type="submit">Dodaj nową oferte</button> 
+</form> 
+<?php 
+$x->close(); 
+?> 
+</body> 
+</html>
