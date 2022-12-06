@@ -1,10 +1,10 @@
 <html> 
      <head> 
-         <title></title> 
+         <title>zsp-sklep</title> 
          <meta charset="utf-8"> 
          <link rel="stylesheet" href="styl.css"> 
          <?php 
-             $db = new mysqli("127.0.0.1","root","",""); 
+             $db = new mysqli("127.0.0.1","root","","zsp-sklep"); 
          ?> 
      </head> 
      <body> 
@@ -22,7 +22,7 @@
                  <p> 
                      <button type="submit"><b>Stwórz</b></button>  
                      |  
-                     <a href="offer" class="a2"><b>Cofnij się do ofert.</b></a>                 
+                     <a href="listaofert.php" class="a2"><b>Cofnij się do ofert.</b></a>                 
                  </p> 
              </form> 
               
