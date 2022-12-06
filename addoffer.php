@@ -8,7 +8,7 @@
          ?> 
      </head> 
      <body> 
-         <div class="banner"> 
+         <div class="sr"> 
              <h2>Stwórz nowe ogłoszenie</h2>      
              <?php 
                  echo "<b>Zalogowany jako: </b>".$_COOKIE["uzytkownik"].'<br>'; 
@@ -34,7 +34,7 @@
                  } 
              ?> 
          </div> 
-         <div class="banner"> 
+         <div class="sr"> 
              <h4>ZSP-Shop</h4> 
          </div> 
      </body> 
