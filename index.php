@@ -34,7 +34,6 @@
         if($_POST['password'] == $row['password'])
         { 
         $_SESSION['login']=$row['login'];
-        $_POST = array();
         header("Location: listaofert.php"); 
         } 
         } 
