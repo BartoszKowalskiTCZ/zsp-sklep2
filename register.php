@@ -4,7 +4,7 @@
     <title>sklep_bk</title>
     <link rel="stylesheet" href="style.css">  //nwm cz bd stl
     <?php 
-    $con = new mysqli("127.0.0.1","root"," ","zsp-sklep");
+    $db = new mysqli("127.0.0.1","root","","zsp-sklep");
     ?>
     <head>
     <body>
@@ -13,16 +13,16 @@
     </div>
     <div class="main">
     <form method="POST">
-    <p>Name: <input type="text" name="name"></p>  // dl txt
-    <p>Login: <input type="text" name="login"></p>
+    <p>Name: <input type="text" name="Name"></p>  // dl txt
+    <p>Login: <input type="text" name="Login"></p>
     <p>Password: <input type="password" name="Password"></p>
     <p>button type="submit"><b>Zarejestruj sie</b></p> 
     </form>
     <?php
-    if(isset($_POST['name']) && isset($_POST['login']) && isset($_POST['password']))
-    {
-    $user_add = 'INSERT INTO Users (name, login, password) VALUES ("'.$_POST["name"].'", "'.$_POST["login"].'", "'.$_POST["password"].'")'; 
-    $db -> query ($user_add); 
+    if(isset($_POST['name']) && isset($_POST['login']) && isset($_POST['password'])){
+    $sql = ('INSERT INTO `users` (`Name`, `Login`, `Password`) VALUES ("'.$_POST["Name"].'", "'.$_POST["Login"].'", "'.$_POST["Password"].'")'); 
+    $db->query($sql);
+    $db->close();
     } 
     ?> 
     </div> 
