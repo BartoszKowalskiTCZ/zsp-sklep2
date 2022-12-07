@@ -1,4 +1,4 @@
-        <html>
+               <html>
         <head>
         <meta charset="Utf-8">
         <title>sklep_bk</title>
@@ -45,9 +45,6 @@
         </body> 
         </html>
                 
-            
-            
-            
             
             
             
