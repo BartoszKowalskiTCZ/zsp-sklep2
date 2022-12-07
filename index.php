@@ -33,19 +33,20 @@
         {
         if($_POST['password'] == $row['password'])
         { 
-        $_SESSION['login']=$row['login']; 
-        $_POST = array(); 
+        $_SESSION['login']=$row['login'];
+        $_POST = array();
         header("Location: listaofert.php"); 
         } 
         } 
         }  
         }
-        }
-        mysqli_close($con); 
-        ?> 
+        }  
+        mysqli_close($con);
+        ?>
         </body> 
         </html>
                 
+            
             
             
             
