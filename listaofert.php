@@ -16,10 +16,10 @@ $con = $res->fetch_all(MYSQLI_ASSOC);
 <?php 
 echo "TWOJE OFERTY <br>"; 
 for($i = 0; $i < count($offers); $i++){ 
-echo 'Numer ogłoszenia '.$offers[$i]['id'].'<br>'; 
-echo 'Nazwa produktu '.$offers[$i]['product_name'].'<br>'; 
-echo 'Cena produktu '.$offers[$i]['price'].'<br>'; 
-echo 'Opis produktu <br>'.$offers[$i]['content'].'<br>'; 
+echo 'Numer ogłoszenia '.$con[$i]['id'].'<br>'; 
+echo 'Nazwa produktu '.$con[$i]['product_name'].'<br>'; 
+echo 'Cena produktu '.$con[$i]['price'].'<br>'; 
+echo 'Opis produktu '.$com[$i]['description'].'<br>'; 
 } 
 ?> 
 <form action="addoffer.php"> 
