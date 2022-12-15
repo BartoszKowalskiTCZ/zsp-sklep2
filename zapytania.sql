@@ -11,48 +11,39 @@ INSERT INTO `Products` (`name`, `description`, `price`) VALUES ('telefon','bezuz
 INSERT INTO `Orders` (`Products_id`, `Users_id`) VALUES ('1', '3'), ('3', '1'), ('2', '4'), ('2', '2');
 
 //DODAJE NOWA OFERTE //
-INSERT INTO `offers`(`user_id`, `offer_name`, `description`, `price`) 
-VALUES ('1','telefon','bialy','250');
+INSERT INTO `offers`(`user_id`, `offer_name`, `description`, `price`) VALUES ('1','telefon','bialy','250');
 
 ///SZCZEGOLY ZAKUPIONEGO ZAMOWIENIA////
-SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price 
-FROM orders JOIN offers ON orders.offer_id=offers.id WHERE orders.user_id="4"
-AND orders.offer_id="1";
+SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price FROM orders JOIN offers ON orders.offer_id=offers.id 
+WHERE orders.user_id="4" AND orders.offer_id="1";
 
  //nie kupione przedmioty//
-SELECT offers.offer_name, offers.price FROM offers WHERE offers.id 
-NOT IN (SELECT offer_id FROM orders);
+SELECT offers.offer_name, offers.price FROM offers WHERE offers.id NOT IN (SELECT offer_id FROM orders);
 
  //szczegoly danej nie kupionej oferty//
-SELECT offers.id, offers.offer_name, offers.description, offers.price from offers 
-WHERE offers.id="2" AND offers.id NOT IN (SELECT offer_id FROM orders);
+SELECT offers.id, offers.offer_name, offers.description, offers.price from offers WHERE offers.id="2" AND offers.id NOT IN (SELECT offer_id FROM orders);
 
  //lista ofert danego użytkownika//
 SELECT offers.offer_name, offers.price FROM offers WHERE offers.user_id="2";
 
 //edycja danej oferty//
-UPDATE offers SET offers.offer_name="[value-1]",offers.description="[value-2]",
-offers.price="[value-3]" WHERE offers.id="2";
+UPDATE offers SET offers.offer_name="[value-1]",offers.description="[value-2]",offers.price="[value-3]" WHERE offers.id="2";
 
 //wyswietl szczegoly danej oferty//
 SELECT offers.offer_name, offers.description, offers.price FROM offers WHERE offers.id="1";
 
 //Lista moich zakupow//
-SELECT orders.user_id, offers.offer_name, offers.price FROM orders 
-JOIN offers ON orders.offer_id=offers.id WHERE orders.user_id="4";
+SELECT orders.user_id, offers.offer_name, offers.price FROM orders JOIN offers ON orders.offer_id=offers.id WHERE orders.user_id="4";
 
 //szczegoly zakupionego przedmiotu//
-SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price 
-FROM orders JOIN offers ON orders.offer_id=offers.id WHERE orders.user_id="4"
-AND orders.offer_id="10";
+SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price FROM orders JOIN offers ON orders.offer_id=offers.id 
+WHERE orders.user_id="4" AND orders.offer_id="10";
 
 //niekupione przedmioty//
-SELECT offers.offer_name, offers.price FROM offers WHERE offers.id 
-NOT IN (SELECT offer_id FROM orders);
+SELECT offers.offer_name, offers.price FROM offers WHERE offers.id NOT IN (SELECT offer_id FROM orders);
 
 // szczegoly nie zakupionej oferty//
-SELECT offers.id, offers.offer_name, offers.description, offers.price from offers 
-WHERE offers.id="3" AND offers.id NOT IN (SELECT offer_id FROM orders);
+SELECT offers.id, offers.offer_name, offers.description, offers.price from offers WHERE offers.id="3" AND offers.id NOT IN (SELECT offer_id FROM orders);
 
 //kupowanie przedmiotu //
 INSERT INTO orders (`offer_id`, `user_id`) VALUES ('3','1');
