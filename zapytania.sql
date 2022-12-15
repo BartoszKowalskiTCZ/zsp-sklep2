@@ -10,16 +10,16 @@ INSERT INTO `Products` (`name`, `description`, `price`) VALUES ('telefon','bezuz
 //dodaje zamowienia// 
 INSERT INTO `Orders` (`Products_id`, `Users_id`) VALUES ('1', '3'), ('3', '1'), ('2', '4'), ('2', '2');
 
-szczegoly  zakupionego zamowienia
+//szczegoly  zakupionego zamowienia//
 SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price 
 FROM orders JOIN offers ON orders.offer_id=offers.id where orders.user_id="4"
 AND orders.offer_id="1";
 
- nie kupione przedmioty
+ //nie kupione przedmioty//
 SELECT offers.offer_name, offers.price from offers WHERE offers.id 
 NOT IN (SELECT offer_id FROM orders);
 
- szczegoly danej nie kupionej oferty
+ //szczegoly danej nie kupionej oferty//
 SELECT offers.id, offers.offer_name, offers.description, offers.price from offers 
 WHERE offers.id="2" AND offers.id NOT IN (SELECT offer_id FROM orders);
 
