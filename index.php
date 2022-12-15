@@ -34,7 +34,7 @@
         if($_POST['password'] == $row['password'])
         { 
         $_SESSION['login']=$row['login'];
-        <form action="listaofert.php" method="POST">; 
+        header("Location: listaofert.php");
         } 
         } 
         }  
