@@ -1,4 +1,4 @@
-               <html>
+        <html>
         <head>
         <meta charset="Utf-8">
         <title>sklep_bk</title>
@@ -34,17 +34,17 @@
         if($_POST['password'] == $row['password'])
         { 
         $_SESSION['login']=$row['login'];
-        header("Location: listaofert.php");
-        } 
-        } 
-        }  
-        }
-        }  
+        header("Location: listaofert.php"); 
+        exit;
+            }
+            }
+            }
+            }
+            }
         mysqli_close($con);
-        ?>
+            ?>
         </body> 
         </html>
-                
             
             
             
