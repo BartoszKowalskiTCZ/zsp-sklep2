@@ -21,7 +21,7 @@ WHERE orders.user_id="4" AND orders.offer_id="1";
 SELECT offers.offer_name, offers.price FROM offers WHERE offers.id NOT IN (SELECT offer_id FROM orders);
 
  //szczegoly danej nie kupionej oferty//
-SELECT offers.id, offers.offer_name, offers.description, offers.price from offers WHERE offers.id="2" AND offers.id NOT IN (SELECT offer_id FROM orders);
+SELECT offers.id, offers.offer_name, offers.description, offers.price FROM offers WHERE offers.id="2" AND offers.id NOT IN (SELECT offer_id FROM orders);
 
  //lista ofert danego użytkownika//
 SELECT offers.offer_name, offers.price FROM offers WHERE offers.user_id="2";
