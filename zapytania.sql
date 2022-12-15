@@ -16,11 +16,11 @@ VALUES ('1','telefon','bialy','250');
 
 ///SZCZEGOLY ZAKUPIONEGO ZAMOWIENIA////
 SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price 
-FROM orders JOIN offers ON orders.offer_id=offers.id where orders.user_id="4"
+FROM orders JOIN offers ON orders.offer_id=offers.id WHERE orders.user_id="4"
 AND orders.offer_id="1";
 
  //nie kupione przedmioty//
-SELECT offers.offer_name, offers.price from offers WHERE offers.id 
+SELECT offers.offer_name, offers.price FROM offers WHERE offers.id 
 NOT IN (SELECT offer_id FROM orders);
 
  //szczegoly danej nie kupionej oferty//
@@ -28,26 +28,26 @@ SELECT offers.id, offers.offer_name, offers.description, offers.price from offer
 WHERE offers.id="2" AND offers.id NOT IN (SELECT offer_id FROM orders);
 
  //lista ofert danego użytkownika//
-SELECT offers.offer_name, offers.price from offers where offers.user_id="2";
+SELECT offers.offer_name, offers.price FROM offers WHERE offers.user_id="2";
 
 //edycja danej oferty//
 UPDATE offers SET offers.offer_name="[value-1]",offers.description="[value-2]",
 offers.price="[value-3]" WHERE offers.id="2";
 
 //wyswietl szczegoly danej oferty//
-SELECT offers.offer_name, offers.description, offers.price from offers where offers.id="1";
+SELECT offers.offer_name, offers.description, offers.price FROM offers WHERE offers.id="1";
 
 //Lista moich zakupow//
 SELECT orders.user_id, offers.offer_name, offers.price FROM orders 
-JOIN offers ON orders.offer_id=offers.id where orders.user_id="4";
+JOIN offers ON orders.offer_id=offers.id WHERE orders.user_id="4";
 
 //szczegoly zakupionego przedmiotu//
 SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price 
-FROM orders JOIN offers ON orders.offer_id=offers.id where orders.user_id="4"
+FROM orders JOIN offers ON orders.offer_id=offers.id WHERE orders.user_id="4"
 AND orders.offer_id="10";
 
 //niekupione przedmioty//
-SELECT offers.offer_name, offers.price from offers WHERE offers.id 
+SELECT offers.offer_name, offers.price FROM offers WHERE offers.id 
 NOT IN (SELECT offer_id FROM orders);
 
 // szczegoly nie zakupionej oferty//
