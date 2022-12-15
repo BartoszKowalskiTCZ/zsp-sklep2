@@ -10,6 +10,10 @@ INSERT INTO `Products` (`name`, `description`, `price`) VALUES ('telefon','bezuz
 //dodaje zamowienia// 
 INSERT INTO `Orders` (`Products_id`, `Users_id`) VALUES ('1', '3'), ('3', '1'), ('2', '4'), ('2', '2');
 
+//dodaj nowa oferte //
+INSERT INTO `offers`(`user_id`, `offer_name`, `description`, `price`) 
+VALUES ('1','telefon','bialy','250');
+
 //szczegoly  zakupionego zamowienia//
 SELECT orders.offer_id, orders.user_id, offers.offer_name, offers.description, offers.price 
 FROM orders JOIN offers ON orders.offer_id=offers.id where orders.user_id="4"
@@ -32,10 +36,6 @@ offers.price="[value-3]" WHERE offers.id="2";
 
 //wyswietl szczegoly danej oferty//
 SELECT offers.offer_name, offers.description, offers.price from offers where offers.id="1";
-
-//dodaj nowa oferte //
-INSERT INTO `offers`(`user_id`, `offer_name`, `description`, `price`) 
-VALUES ('1','telefon','bialy','250');
 
 
 //Lista moich zakupow//
